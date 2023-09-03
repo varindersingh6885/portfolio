@@ -1,7 +1,12 @@
+import { useState } from "react";
+import Navbar from "./components/Navbar.tsx";
+
 const App = () => {
+  const [selectedPage, setSelectedPage] = useState("home");
+
   return (
-    <div className="text-blue">
-      Hi, I am Varinder Singh. A Software Engineer
+    <div className="app bg-deep-blue">
+      <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
     </div>
   );
 };

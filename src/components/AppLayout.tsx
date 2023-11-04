@@ -1,6 +1,15 @@
 import { Navbar } from "./Navbar";
 import { ProjectCard, ProjectCardProps } from "./ProjectCard";
 import { SkillsCard, SkillsCardProps } from "./SkillsCard";
+import figmaIcon from "../assets/icons/figma.svg";
+import reactIcon from "../assets/icons/react.svg";
+import javaScriptIcon from "../assets/icons/javascript.svg";
+import typeScriptIcon from "../assets/icons/typescript.svg";
+import htmlIcon from "../assets/icons/html.svg";
+import cssIcon from "../assets/icons/css.svg";
+import reduxIcon from "../assets/icons/redux.svg";
+import tailwindCSSIcon from "../assets/icons/tailwind.svg";
+import nodeJsIcon from "../assets/icons/nodejs.svg";
 
 const ReactPngUrl =
   "https://w7.pngwing.com/pngs/661/898/png-transparent-react-javascript-library-web-development-vue-js-funding-icon-logo-symmetry-web-development-thumbnail.png";
@@ -10,32 +19,36 @@ const skillTypes: SkillsCardProps[] = [
     skillTitle: "Frontend Skills",
     skills: [
       {
-        iconUrl: ReactPngUrl,
+        iconUrl: reactIcon,
         skillName: "React",
       },
       {
-        iconUrl: ReactPngUrl,
+        iconUrl: javaScriptIcon,
         skillName: "JavaScript",
       },
       {
-        iconUrl: ReactPngUrl,
+        iconUrl: typeScriptIcon,
         skillName: "TypeScript",
       },
       {
-        iconUrl: ReactPngUrl,
+        iconUrl: htmlIcon,
         skillName: "HTML",
       },
       {
-        iconUrl: ReactPngUrl,
+        iconUrl: cssIcon,
         skillName: "CSS",
       },
       {
-        iconUrl: ReactPngUrl,
+        iconUrl: reduxIcon,
         skillName: "Redux",
       },
       {
-        iconUrl: ReactPngUrl,
+        iconUrl: figmaIcon,
         skillName: "Figma",
+      },
+      {
+        iconUrl: tailwindCSSIcon,
+        skillName: "Tailwind CSS",
       },
     ],
   },
@@ -43,11 +56,11 @@ const skillTypes: SkillsCardProps[] = [
     skillTitle: "Backend Skills",
     skills: [
       {
-        iconUrl: ReactPngUrl,
+        iconUrl: nodeJsIcon,
         skillName: "Node.js",
       },
       {
-        iconUrl: ReactPngUrl,
+        iconUrl: "",
         skillName: "Nest.js",
       },
     ],

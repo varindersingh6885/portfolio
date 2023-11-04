@@ -1,97 +1,59 @@
-import { useState } from "react";
-import useMediaQuery from "../hooks/useMediaQuery";
-import NavbarLink from "./NavbarLink";
+import profileImage from "../assets/img-profile.svg";
+import gmailIcon from "../assets/icons/gmail.svg";
+import githubIcon from "../assets/icons/github.svg";
+import linkedInIcon from "../assets/icons/linkedin.svg";
 
-import MenuIcon from "../assets/menu-icon.svg";
-import CloseIcon from "../assets/close-icon.svg";
-
-type NavbarProps = {
-  selectedPage: string;
-  setSelectedPage: (val: string) => void;
-  isTopOfPage: boolean;
+type SocialIcon = {
+  name: string;
+  url: string;
+  navigateToUrl: string;
 };
 
-const links = [
+const socialIcons: SocialIcon[] = [
   {
-    name: "Home",
+    name: "LinkedIn",
+    url: linkedInIcon,
+    navigateToUrl: "https://www.linkedin.com/in/varindersingh6885",
   },
   {
-    name: "Skills",
+    name: "Github",
+    url: githubIcon,
+    navigateToUrl: "https://github.com/varindersingh6885",
   },
   {
-    name: "Experience",
-  },
-  {
-    name: "Projects",
-  },
-  {
-    name: "Contact",
+    name: "Gmail",
+    url: gmailIcon,
+    navigateToUrl: "mailto:varindersingh6885@gmail.com",
   },
 ];
 
-const Navbar = ({
-  selectedPage,
-  setSelectedPage,
-  isTopOfPage,
-}: NavbarProps) => {
-  const isDesktopMode = useMediaQuery("(min-width: 768px)");
-  const [isMenuToggled, setIsMenuToggled] = useState(false);
-  const navbarBackground = isTopOfPage ? "" : "bg-red";
-
+export const Navbar = () => {
   return (
-    <nav className={`z-40 w-full fixed top-0 py-6 ${navbarBackground}`}>
-      <div className="flex items-center justify-between mx-auto w-5/6">
+    <nav className="rounded-lg flex justify-between items-center p-4 bg-ui-blue-dark">
+      <div className="flex items-center">
         <div>
-          <h4 className="font-playfair text-3xl font-bold">VS</h4>
+          <img src={profileImage} className="h-20" />
         </div>
-
-        {isDesktopMode ? (
-          <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
-            {links.map((link) => (
-              <NavbarLink
-                key={link.name}
-                page={link.name}
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-              />
-            ))}
-          </div>
-        ) : (
-          <div>
-            <button
-              className="rounded-full bg-red p-2"
-              onClick={() => setIsMenuToggled(!isMenuToggled)}
-            >
-              <img src={MenuIcon} alt="menu-icon" />
-            </button>
-          </div>
-        )}
-
-        {!isDesktopMode && isMenuToggled && (
-          <div className="fixed right-0 bottom-0 h-full bg-blue w-[300px]">
-            {/* CLOSE ICON */}
-            <div className="flex justify-end p-12">
-              <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-                <img alt="close-icon" src={CloseIcon} title="close" />
-              </button>
-            </div>
-
-            {/* MENU ITEMS */}
-            <div className="flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue">
-              {links.map((link) => (
-                <NavbarLink
-                  key={link.name}
-                  page={link.name}
-                  selectedPage={selectedPage}
-                  setSelectedPage={setSelectedPage}
-                />
-              ))}
-            </div>
-          </div>
-        )}
+        <div className="mx-4">
+          <h1 className="text-4xl font-semibold">Varinder Singh</h1>
+          <h2 className="text-xl ml-2">Frontend Developer</h2>
+        </div>
       </div>
+      <ul className="flex">
+        {socialIcons.map((icon) => {
+          return (
+            <li key={icon.name} className="mx-2">
+              <a
+                className="cursor-pointer"
+                href={icon.navigateToUrl}
+                target="_blank"
+              >
+                <img src={icon.url} alt={icon.name} />
+              </a>
+            </li>
+          );
+        })}
+      </ul>
     </nav>
   );
 };
-
-export default Navbar;

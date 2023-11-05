@@ -10,6 +10,7 @@ import cssIcon from "../assets/icons/css.svg";
 import reduxIcon from "../assets/icons/redux.svg";
 import tailwindCSSIcon from "../assets/icons/tailwind.svg";
 import nodeJsIcon from "../assets/icons/nodejs.svg";
+import { ExperienceCard } from "./ExperienceCard";
 
 const skillTypes: SkillsCardProps[] = [
   {
@@ -86,7 +87,37 @@ export const AppLayout = () => {
     <div className="bg-ui-blue h-[100vh] w-[100vw] overflow-auto p-3 relative text-white">
       <Navbar />
 
-      <div className="flex mt-2">
+      <div className="flex flex-wrap mt-2">
+        <div className="w-8/12">
+          <section className="pr-2 mb-2" id="projects">
+            <h2 className="text-center font-semibold mb-2">Experience</h2>
+            <ExperienceCard />
+          </section>
+
+          <section className="pr-2 mb-4" id="projects">
+            <h2 className="text-center font-semibold mb-2">Projects</h2>
+            {projects.map((project) => (
+              <ProjectCard key={project.title} {...project} />
+            ))}
+          </section>
+        </div>
+
+        <div className="w-4/12">
+          <section className="pl-2" id="skills">
+            <h2 className="mb-2 text-center font-semibold">Skills</h2>
+
+            {skillTypes.map((skillType) => (
+              <SkillsCard
+                key={skillType.skillTitle}
+                skillTitle={skillType.skillTitle}
+                skills={skillType.skills}
+              />
+            ))}
+          </section>
+        </div>
+      </div>
+
+      {/* <div className="flex mt-2 flex-wrap">
         <section className="w-8/12 pr-2" id="projects">
           <h2 className="text-center font-semibold mb-2">Projects</h2>
           {projects.map((project) => (
@@ -105,7 +136,14 @@ export const AppLayout = () => {
             />
           ))}
         </section>
-      </div>
+
+        <section className="w-8/12 pr-2" id="projects">
+          <h2 className="text-center font-semibold mb-2">Projects</h2>
+          {projects.map((project) => (
+            <ProjectCard key={project.title} {...project} />
+          ))}
+        </section>
+      </div> */}
     </div>
   );
 };

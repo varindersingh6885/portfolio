@@ -17,7 +17,7 @@ export const SkillsCard = ({ skills, skillTitle }: SkillsCardProps) => {
       <div className="flex flex-wrap">
         {skills.map((skill) => {
           return (
-            <div className="mr-2 mb-2">
+            <div className="mr-2 mb-2" key={skill.skillName}>
               <SkillPill
                 key={skill.skillName}
                 skillName={skill.skillName}

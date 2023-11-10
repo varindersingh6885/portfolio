@@ -58,7 +58,7 @@ export const ExperienceCard = () => {
             </li>
           </ul>
         </div>
-        <div className="sm:w-3/12 p-2 flex justify-end">
+        <div className="sm:w-3/12">
           <DesignationHierarchy designations={designations} />
         </div>
       </div>

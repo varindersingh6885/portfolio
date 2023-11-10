@@ -28,20 +28,22 @@ export const ExperienceCard = () => {
               <img src={nagarroIcon} className="h-10 w-10" />
             </a>
             <h3 className="mx-2 text-lg leading-none">
-              <a
-                href="https://www.linkedin.com/company/nagarro"
-                className="hover:underline"
-                target="_blank"
-              >
-                {designations[0].designationName}
-              </a>
+              {designations[0].designationName}
             </h3>
           </div>
 
           <span className="text-sm text-gray-400">March 2022 - Present</span>
         </div>
         <div className="flex justify-between items-center pl-10">
-          <span className="mx-2 text-sm text-gray-400">@Nagarro</span>
+          <span className="mx-2 text-sm text-gray-400">
+            <a
+              href="https://www.linkedin.com/company/nagarro"
+              className="hover:underline"
+              target="_blank"
+            >
+              @Nagarro
+            </a>
+          </span>
           {!isDetailsVisible && (
             <button
               onClick={() => setIsDetailsVisible(true)}

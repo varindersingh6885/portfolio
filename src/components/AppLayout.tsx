@@ -71,14 +71,21 @@ const projects: ProjectCardProps[] = [
     Given a list of project descriptions. Create an application that can be used to perform a search over these descriptions. The search should support free-form queries such as find the projects that use React Js in frontend and Python in backend.
     Solution:    
     Developed an application where I have integrated ChatGPT from OpenAI to pass the list of projects as a context. And then performing search queries as a prompt to ChatGPT to find the relevant projects.`,
-    projectUrl: "https://search-with-gpt.netlify.app/",
+    projectUrl: "https://search-with-gpt.netlify.app",
     title: "Search With GPT",
     projectCodeRepoUrl: "https://github.com/varindersingh6885/search-with-gpt",
   },
   {
+    description:
+      "I have designed and developed a dynamic YouTube frontend application, leveraging YouTube's Data API to curate and showcase popular videos. The application features a user-friendly search bar with real-time suggestive search functionality, enabling seamless access to relevant content. Additionally, I integrated YouTube's API to display comments for each video, fostering user engagement and community interaction.",
+    projectUrl: "https://youtube-varindersingh6885.netlify.app",
+    title: "Youtube",
+    projectCodeRepoUrl: "https://github.com/varindersingh6885/youtube",
+  },
+  {
     description: `Built an online coding platform using the MERN (MongoDB, Express.js, React, Node.js) tech Integrated a rich text editor to write and view formatted problem descriptions.\nDeveloped a discussion forum for coding problems to facilitate communication and collaboration
     between users.\nIntegrated the Jdoodle API for code compilation to provide users with an easy way to test and run their code.`,
-    projectUrl: "https://acecoder.onrender.com/",
+    projectUrl: "https://acecoder.onrender.com",
     title: "AceCoder",
     projectCodeRepoUrl: "https://github.com/varindersingh6885/AceCoder",
   },
